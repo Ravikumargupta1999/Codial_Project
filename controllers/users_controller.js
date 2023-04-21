@@ -19,7 +19,14 @@ module.exports.signIn = function(req,res){
 };
 
 
-// get the sign up data
+// get the sign up data for user
 module.exports.create = function(req,res){
+    // TODO later
+}
+
+
+
+// get the sign in data for user
+module.exports.createSession = function(req,res){
     // TODO later
 }
