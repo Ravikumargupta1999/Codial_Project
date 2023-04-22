@@ -51,5 +51,5 @@ module.exports.create = async function (req, res) {
 
 // get the sign in data for user
 module.exports.createSession = function (req, res) {
-    // TODO later
+    return res.redirect('/')
 }
