@@ -11,7 +11,7 @@ module.exports.profile = function (req, res) {
 // rendering sign up page
 module.exports.signUp = function (req, res) {
 
-    if(req.isAuthenticated()){
+    if (req.isAuthenticated()) {
         return res.redirect('/users/profile');
     }
 
@@ -22,7 +22,7 @@ module.exports.signUp = function (req, res) {
 
 // rendering sign in page
 module.exports.signIn = function (req, res) {
-    if(req.isAuthenticated()){
+    if (req.isAuthenticated()) {
         return res.redirect('/users/profile');
     }
     return res.render('user_sign_in', {
@@ -37,24 +37,24 @@ module.exports.create = async function (req, res) {
         return res.redirect('back');
     }
 
-    try{
+    try {
         let user = await User.findOne({ email: req.body.email });
 
-        if(user)
+        if (user)
             return await res.redirect('back');
 
-        try{
+        try {
             User.create(req.body);
 
             return res.redirect('/users/sign-in');
         }
-        catch(err){
+        catch (err) {
             console.log('error in creating user while signing up');
         }
     }
-    catch(err){
+    catch (err) {
         console.log('error in finding user in signing up');
-    }   
+    }
 }
 
 
@@ -64,10 +64,10 @@ module.exports.createSession = function (req, res) {
     return res.redirect('/')
 }
 
-module.exports.destroySession = function(req,res,next){
-    req.logout(function(err) {
+module.exports.destroySession = function (req, res, next) {
+    req.logout(function (err) {
         if (err) { return next(err); }
         res.redirect('/');
-      });
- 
+    });
+
 }
