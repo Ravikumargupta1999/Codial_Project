@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user')
 
 module.exports.home = function (req, res) {
     // console.log(req.cookies);
@@ -46,31 +47,39 @@ module.exports.home = function (req, res) {
     //     }
     // })
     // .exec(function(err, posts){
-    //     return res.render('home', {
-    //         title: "Codeial | Home",
-    //         posts:  posts
-    //     });
+    //     User.find({},function(err,users){
+    //         return res.render('home', {
+    //             title: "Codeial | Home",
+    //             posts:  posts,
+    //             all_users: users
+    //         });
+    //     })   
+       
     // })
    
     Post.find({})
-    .populate('user')
-    .populate({
-        path: 'comments',
-        populate: {
-            path: 'user'
-        }
-    })
-    .exec()
-    .then(posts => {
-        res.render('home', {
-            title: "Codeial | Home",
-            posts:  posts
+   .populate('user')
+   .populate({
+    path: 'comments',
+    populate: {
+      path: 'user'
+    }
+   })
+   .exec()
+   .then(posts => {
+    return User.find({})
+      .then(users => {
+        return res.render('home', {
+          title: "Codeial | Home",
+          posts: posts,
+          all_users: users
         });
-    })
-    .catch(err => {
-        console.error(err);
-        // handle error here
-    });
+      });
+  })
+  .catch(err => {
+    console.error(err);
+  });
+
 
 }
 
