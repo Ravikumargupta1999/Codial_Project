@@ -22,11 +22,10 @@ app.use(sassMiddleware({
     prefix:'/css'
 }))
 app.use(expres.urlencoded());
-
 app.use(cookieParser());
-
 app.use(expres.static('./assests'));
-
+// make the uploads path available to the 
+app.use('/uploads',expres.static(__dirname+'/uploads'));
 app.use(exportsLayouts);
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles',true)
