@@ -25,8 +25,13 @@ module.exports.destroy = async function(req, res){
     try{
        
         let post = await Post.findById(req.params.id);
+        if(post == null){
+            return res.json(404,{
+                message : "Post Not Found"
+            })
+        }
 
-        if(post.user = req.user.id){
+        if(post.user == req.user.id){
             await post.deleteOne();
 
             await Comment.deleteMany({post: req.params.id});

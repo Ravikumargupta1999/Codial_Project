@@ -2,6 +2,7 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 
 module.exports.create = async function(req, res){
+    
     try{
         let post = await Post.create({
             content: req.body.content,
@@ -29,9 +30,10 @@ module.exports.create = async function(req, res){
 
 
 module.exports.destroy = async function(req, res){
-
+    
     try{
-        console.log('Hill')
+        // console.log('Hill')
+        console.log('*****************************',req.params.id);
         let post = await Post.findById(req.params.id);
         console.log(post)
         console.log(post.user,req.user.id);
