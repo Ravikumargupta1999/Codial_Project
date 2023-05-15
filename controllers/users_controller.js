@@ -58,8 +58,8 @@ module.exports.update = async function(req,res){
             return res.redirect('back');
         }
     }else{
-        req.flash('error','Unauthorized');
-        return res.status(401).send('Unauthorized');
+        req.flash('error','Unautho-rized');
+        return res.status(401).send('Unaaaauthorized');
     }
     
 }
