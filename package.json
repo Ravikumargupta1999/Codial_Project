@@ -26,6 +26,7 @@
     "multer": "*",
     "node-sass": "^8.0.0",
     "node-sass-middleware": "^1.0.1",
+    "nodemailer": "^6.9.2",
     "nodemon": "^2.0.22",
     "noty": "*",
     "passport": "^0.6.0",

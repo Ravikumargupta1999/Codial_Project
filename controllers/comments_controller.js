@@ -1,35 +1,36 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const commentsMailer = require('../mailers/comments_mailer');
 
 
-module.exports.create = function(req, res){
-    Post.findById(req.body.post).then (function(post){
-
-        if (post){
-            Comment.create({
-                content: req.body.content,
-                post: req.body.post,
-                user: req.user._id
-            }).then (function( comment){
-                // handle error
-
-                post.comments.push(comment);
-                post.save();
-                req.flash('success','Commented!')
-                res.redirect('/');
-            }).catch(function(err){
-                req.flash('err',err)
-                return;
-            });
-        }
-
-    }).catch(function(err){
-        console.log(err);
-        return;
-    });
-}
-
-
+module.exports.create = async function(req, res) {
+    try {
+      const post = await Post.findById(req.body.post);
+      if (post) {
+        const comment = await Comment.create({
+          content: req.body.content,
+          post: req.body.post,
+          user: req.user._id
+        });
+  
+        post.comments.push(comment);
+        await post.save();
+  
+        console.log("Kya hua");
+        // await Comment.populate('user', 'name email').execPopulate();
+  
+        commentsMailer.newComment(comment);
+  
+        req.flash('success', 'Commented!');
+        res.redirect('/');
+      }
+    } catch (err) {
+      req.flash('err', err);
+      console.log(err);
+    }
+  };
+  
+  
 module.exports.destroy = function(req,res){
     Comment.findById(req.params.id)
     .then(function(comment){
@@ -41,7 +42,7 @@ module.exports.destroy = function(req,res){
             req.flash('success','Comment deleted');
             Post.findByIdAndUpdate(postID,{ $pull : { comments: req.params.id }}, function(err,post){
                 
-                return res.redirect('back');
+              return res.redirect('back');
             });
         }else{
             
