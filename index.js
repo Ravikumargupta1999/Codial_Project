@@ -4,6 +4,8 @@ const app = expres();
 const port = 8000;
 const exportsLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
+const cors = require('cors');
+
 // used for session cookies
 const session = require('express-session');
 const passport = require('passport');
@@ -16,6 +18,11 @@ const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMare = require('./config/middleware');
 
+// setup the chat server to be used with socket.io 
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('Chat Server is listening on port 5000')
 
 app.use(sassMiddleware({
     src : './assests/scss',
@@ -66,6 +73,8 @@ app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 app.use(flash());
 app.use(customMare.setFlash);
+app.use(cors());
+
 
 // Use express router
 app.use('/',require('./routes')); 
@@ -78,3 +87,4 @@ app.listen(port, function(err){
     }
     console.log(`Server is running on port ${port}`);
 });
+
