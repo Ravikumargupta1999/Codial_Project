@@ -1,10 +1,12 @@
 const expres = require('express');
+const env = require('./config/environment');
 const cookieParser = require('cookie-parser');
 const app = expres();
 const port = 8000;
 const exportsLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const cors = require('cors');
+
 
 // used for session cookies
 const session = require('express-session');
@@ -23,17 +25,19 @@ const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat Server is listening on port 5000')
+const path = require('path');
+
 
 app.use(sassMiddleware({
-    src : './assests/scss',
-    dest : './assests/css',
+    src : path.join(__dirname,env.asset_path,'scss'),
+    dest : path.join(__dirname,env.asset_path,'css'),
     debug : true,
     outputStyle : 'extended',
     prefix:'/css'
 }))
 app.use(expres.urlencoded());
 app.use(cookieParser());
-app.use(expres.static('./assests'));
+app.use(expres.static(env.asset_path));
 // make the uploads path available to the 
 app.use('/uploads',expres.static(__dirname+'/uploads'));
 app.use(exportsLayouts);
@@ -50,7 +54,7 @@ app.set('views','./views');
 app.use(session({
     name : 'codeial',
     // TODO change the secret before deployment in prodecution mode
-    secret : 'blahsomething',
+    secret : env.sessiom_cookie_key,
     saveUninitialized :false,
     reSave : false,
     cookie :{
