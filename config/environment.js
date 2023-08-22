@@ -14,9 +14,9 @@ const developmet = {
             pass : "yvvvjppljclyjwwn"
         }
     },
-    google_client_iD: "871165748594-3q98kjuvekg2pocoj9vlbc3sg2k8a0k5.apps.googleusercontent.com",
-    google_client_Secret: "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",
-    google_call_back_URL: "http://localhost:8000/users/auth/google/callback",
+    google_client_id: "871165748594-3q98kjuvekg2pocoj9vlbc3sg2k8a0k5.apps.googleusercontent.com",
+    google_client_secret: "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",
+    google_call_back_url: "http://localhost:8000/users/auth/google/callback",
     jwt_secret : 'codeial'
 
 }

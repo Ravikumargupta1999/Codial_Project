@@ -1,4 +1,4 @@
-#layout-header nav {
+/* #layout-header nav {
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
@@ -16,4 +16,56 @@
       margin-right: 10px; }
   #layout-header nav a {
     color: white;
-    text-decoration: none; }
+    text-decoration: none; } */
+
+
+    #layout-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f7eeee; /* Set your desired background color */
+      color: #fff; /* Set your desired text color */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+      z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  #layout-header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+  }
+  
+  .mini-logo p {
+      margin: 0;
+  }
+  
+  .mini-logo a {
+      text-decoration: none;
+      font-size: 24px; /* Adjust the font size as needed */
+      font-weight: bold;
+  }
+  
+  .auth-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+  }
+  
+  .auth-links li {
+      margin-right: 20px; /* Adjust the spacing between items */
+  }
+  
+  .auth-links a {
+      text-decoration: none;
+      color: #3424e7; /* Set your desired link color */
+      font-weight: bold;
+      transition: color 0.3s ease; /* Add a smooth color transition */
+  }
+  
+  .auth-links a:hover {
+      color: #ff6600; /* Change the link color on hover */
+  }
+  

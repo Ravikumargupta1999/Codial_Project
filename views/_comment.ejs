@@ -1,5 +1,5 @@
-<li>
-    <p>
+<li id = "comm">
+    <p id = "parag">
         <!-- <% if (locals.user && locals.user.id == comment.user){ %>
         
         <small>
@@ -7,9 +7,9 @@
         </small>
         <% } %> -->
         <%= comment.content %>
-        <br>
+       
         <small>
-            <%= comment.user.name %>
+            <%= comment.user %>
         </small>
      
         <% if (locals.user && locals.user.id == comment.user){ %>
@@ -17,7 +17,7 @@
             <!-- <small>
                 <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">Delete Comment</a>
             </small> -->
-            <button>
+            <button id = "bt">
                 <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">Delete Comment</a>
             </button>
         <% } %>

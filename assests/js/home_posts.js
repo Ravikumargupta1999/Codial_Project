@@ -4,7 +4,7 @@
 
         newPostForm.submit(function(e){
             e.preventDefault();
-
+            console.log('Function Called')
             $.ajax({
                 type: 'post',
                 url: '/posts/create',
@@ -34,7 +34,7 @@
                     <p>
                         
                         <small>
-                            <a class="delete-post-button"  href="/posts/destroy/${ post._id }">X</a>
+                            <a class="delete-post-button"  href="/posts/destroy/${ post._id }">Delete Post</a>
                         </small>
                        
                         ${ post.content }

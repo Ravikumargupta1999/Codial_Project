@@ -1,0 +1,27 @@
+#comm {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc; }
+
+#parag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  #parag a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold; }
+    #parag a:hover {
+      color: #ff0000; }
+  #parag .delete-comment-button:hover {
+    color: #ff0000; }
+  #parag .toggle-like-button:hover {
+    color: #ff0000; }
+
+#bt {
+  background-color: transparent;
+  border: none;
+  cursor: pointer; }
+  #bt:focus {
+    outline: none; }
