@@ -72,7 +72,7 @@ module.exports.signUp = function (req, res) {
     }
 
     return res.render('user_sign_up', {
-        title: "Codial | Sign UP"
+        title: "META | Sign UP"
     })
 };
 
@@ -82,7 +82,7 @@ module.exports.signIn = function (req, res) {
         return res.redirect('/users/profile');
     }
     return res.render('user_sign_in', {
-        title: "Codial | Sign In"
+        title: "META | Sign In"
     })
 };
 

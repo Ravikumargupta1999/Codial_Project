@@ -1,0 +1,42 @@
+$color_1: #333;
+$color_2: #ff0000;
+$background-color_1: #f9f9f9;
+$background-color_2: transparent;
+
+#comm {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: $background-color_1;
+	border: 1px solid #ccc;
+}
+#parag {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	a {
+		text-decoration: none;
+		color: $color_1;
+		font-weight: bold;
+		&:hover {
+			color: $color_2;
+		}
+	}
+	.delete-comment-button {
+		&:hover {
+			color: $color_2;
+		}
+	}
+	.toggle-like-button {
+		&:hover {
+			color: $color_2;
+		}
+	}
+}
+#bt {
+	background-color: $background-color_2;
+	border: none;
+	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
+}

@@ -1,0 +1,111 @@
+/* #sign-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; }
+
+h1:hover {
+  color: #ff0000;
+  cursor: pointer; }
+
+#sign-up-box {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9; }
+  #sign-up-box h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; }
+  #sign-up-box form {
+    display: flex;
+    flex-direction: column; }
+  #sign-up-box input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px; }
+  #sign-up-box input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px; }
+  #sign-up-box input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px; }
+  #sign-up-box input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer; }
+    #sign-up-box input[type="submit"]:hover {
+      background-color: #ff0000; }
+  #sign-up-box p {
+    text-align: center;
+    margin-top: 10px; }
+  #sign-up-box a {
+    color: #333;
+    text-decoration: none; }
+    #sign-up-box a:hover {
+      color: #ff0000; } */
+
+
+      /* Reset some default styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Set a background color */
+}
+
+/* Center the sign-up container vertically and horizontally */
+#sign-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Make sure it spans the entire viewport height */
+}
+
+/* Style the sign-up box */
+#sign-up-box {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 300px; /* Adjust the width as needed */
+  text-align: center;
+}
+
+/* Style the form elements */
+#sign-up-box input[type="text"],
+#sign-up-box input[type="email"],
+#sign-up-box input[type="password"],
+#sign-up-box input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style the submit button */
+#sign-up-box input[type="submit"] {
+  background-color: #007BFF; /* Add your preferred button color */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#sign-up-box input[type="submit"]:hover {
+  background-color: #0056b3; /* Change button color on hover */
+}
+
+/* Style the Google Sign In/Sign up link */
+#sign-up-box p a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+#sign-up-box p a:hover {
+  text-decoration: underline;
+}

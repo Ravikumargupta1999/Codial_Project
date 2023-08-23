@@ -28,22 +28,28 @@ console.log('Chat Server is listening on port 5000')
 const path = require('path');
 
 
-app.use(sassMiddleware({
-    src : path.join(__dirname,env.asset_path,'scss'),
-    dest : path.join(__dirname,env.asset_path,'css'),
-    debug : true,
-    outputStyle : 'extended',
-    prefix:'/css'
-}))
 app.use(expres.urlencoded());
 app.use(cookieParser());
-app.use(expres.static(env.asset_path));
+app.use(expres.static('./assests'));
 // make the uploads path available to the 
 app.use('/uploads',expres.static(__dirname+'/uploads'));
 app.use(exportsLayouts);
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles',true)
 app.set('layout extractScripts',true)
+
+app.use(sassMiddleware({
+    // src : path.join(__dirname,env.asset_path,'scss'),
+    // dest : path.join(__dirname,env.asset_path,'css'),
+    // debug : true,
+    // outputStyle : 'extended',
+    // prefix:'/css'
+    src : './assests/scss',
+    dest : './assests/css',
+    debug : true,
+    outputStyle :'extended',
+    prefix : '/css'
+}))
 
 
 // set up the engine 

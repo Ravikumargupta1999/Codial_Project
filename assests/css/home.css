@@ -1,5 +1,5 @@
-#home-container {
-  display: flex; }
+/* #home-container {
+  display: block; }
   #home-container #feed-posts {
     width: 70%;
     padding: 10px; }
@@ -7,4 +7,107 @@
     width: 50%;
     padding: 10px;
     border-left: 1px solid lightgray;
-    height: 100%; }
+    height: 100%; } */
+
+/* 
+    #home-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+   }
+    #feed-posts, #user-friends {
+      flex-basis: calc(50% - 10px);
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: #f0f0f0;
+      margin: 5px;
+   }
+    #feed-posts {
+      order: 1;
+   }
+     */
+
+/* Style for home-container */
+#home-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 80px; /* Adjust the margin to clear the fixed header height */
+}
+
+/* Style for feed-posts section */
+#feed-posts {
+  flex: 1;
+  margin-right: 20px; /* Adjust the spacing between feed-posts and user-friends */
+  background-color: #f7f7f7; /* Set your desired background color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#feed-posts h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333; /* Set your desired text color */
+}
+
+#new-post-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#new-post-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc; /* Add a border for the text area */
+  border-radius: 5px;
+}
+
+#new-post-form input[type="submit"] {
+  background-color: #333; /* Set your desired button background color */
+  color: #fff; /* Set your desired button text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto; /* Center the button */
+}
+
+#new-post-form input[type="submit"]:hover {
+  background-color: #ff6600; /* Change the button background color on hover */
+}
+
+#posts-list-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for user-friends section */
+#user-friends {
+  flex: 1;
+  background-color: #f7f7f7; /* Set your desired background color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#user-friends h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333; /* Set your desired text color */
+}
+
+.friend-link {
+  text-decoration: none;
+  color: #333; /* Set your desired link color */
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease; /* Add a smooth color transition */
+}
+
+.friend-link:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #ff6600; /* Change the link color on hover */
+}

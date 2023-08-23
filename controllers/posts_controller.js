@@ -5,12 +5,14 @@ const Like = require('../models/like');
 module.exports.create = async function(req, res){
     
     try{
+        // console.log('**************',req.user,req.user.name);
         let post = await Post.create({
             content: req.body.content,
             user: req.user._id
         });
-        
+        // console.log('Possssssst',post.user,post.user._id.name);
         if (req.xhr){
+            console.log('Ravi Kumar Gupta')
             return res.status(200).json({
                 data: {
                     post: post
@@ -73,7 +75,7 @@ module.exports.destroy = async function(req, res){
         }
 
     }catch(err){
-        console.log('HHHHHHHHHHhhsaaaadsasssssssssssh')
+        // console.log('HHHHHHHHHHhhsaaaadsasssssssssssh')
         console.log(err);
         req.flash('error', err);
         return res.redirect('back');
