@@ -3,7 +3,8 @@ const developmet = {
     name : 'developmet',
     asset_path: '/assests',
     sessiom_cookie_key: 'blahsomething',
-    db: 'codial_development',
+    // db: 'codial_development',
+    db: 'mongodb+srv://guptaravi3217:YrqHlKMfrPyKrboP@cluster0.ffuopit.mongodb.net/',
     smtp : {
         service : "gmail",
         host : "smtp.gmail.com",
