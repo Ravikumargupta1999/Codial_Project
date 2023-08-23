@@ -4,6 +4,7 @@ class ChatEngine{
         this.userEmail = userEmail;
 
         this.socket = io.connect('http://localhost:5000');
+        // this.socket = io.connect('https://metadeploy-cxnv.onrender.com:5000');
 
         if (this.userEmail){
             this.connectionHandler();

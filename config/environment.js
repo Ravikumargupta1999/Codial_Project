@@ -4,7 +4,7 @@ const developmet = {
     asset_path: '/assests',
     sessiom_cookie_key: 'blahsomething',
     // db: 'codial_development',
-    db: 'mongodb+srv://harshitdaga7:snHB9JOPraAuKbi2@cluster0.8mxolzn.mongodb.net/codial_development?retryWrites=true&w=majority',
+    db: 'mongodb+srv://guptaravi3217:A14diynTAg0BnofC@cluster0.zuoouho.mongodb.net/codial_development?retryWrites=true&w=majority',
     smtp : {
         service : "gmail",
         host : "smtp.gmail.com",

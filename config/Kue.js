@@ -2,7 +2,7 @@ const kue = require('kue');
 // const queue = kue.createQueue();
 const queue = kue.createQueue({
 
-    redis: "redis://default:099NSvjA3rjrKfiyRzs6dMQmNEU7q83j@redis-15202.c52.us-east-1-4.ec2.cloud.redislabs.com:15202"
+    redis: "redis://default:LAHr7z7L2yNFA1kFEe77Tvmft45y47br@redis-11359.c283.us-east-1-4.ec2.cloud.redislabs.com:11359"
 });
 
 
